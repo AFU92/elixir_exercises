@@ -1,4 +1,4 @@
-defmodule ElixirExercises.Exercise2Case do
+defmodule ElixirExercises.Exercise1Case do
   def calculate_bonification(value) do
     case value do
       x when is_integer(x) and x > 0 ->
