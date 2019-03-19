@@ -3,6 +3,10 @@ defmodule ElixirExercises.Exercise4Recursion do
     list_sum(t, h)
   end
 
+  def list_sum([]) do
+    {:ok, 0}
+  end
+
   def list_sum(_not_list) do
     {:error, "It isn't a stupid list, think please xD"}
   end
@@ -12,6 +16,9 @@ defmodule ElixirExercises.Exercise4Recursion do
   end
 
   defp list_sum([h | t], sum) do
-    list_sum(t, sum + h)
+    cond do
+      is_integer(h) -> list_sum(t, sum + h)
+      true -> {:error, "There is a not integer item in the list"}
+    end
   end
 end
