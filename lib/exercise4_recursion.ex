@@ -3,8 +3,12 @@ defmodule ElixirExercises.Exercise4Recursion do
     list_sum(t, h)
   end
 
+  def list_sum(_not_list) do
+    {:error, "It isn't a stupid list, think please xD"}
+  end
+
   defp list_sum([], sum) do
-    sum
+    {:ok, sum}
   end
 
   defp list_sum([h | t], sum) do
